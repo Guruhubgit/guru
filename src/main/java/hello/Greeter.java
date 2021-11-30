@@ -1,8 +1,10 @@
 import static org.hamcrest.CoreMatchers.containsString;
 package hello;
 
-public class Greeter {
-  public String sayHello() {
+public class Greeter 
+{
+  public String sayHello()
+  {
     return "Hello world!";
   }
 }
