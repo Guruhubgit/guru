@@ -1,3 +1,4 @@
+import static org.hamcrest.CoreMatchers.containsString;
 package hello;
 
 public class Greeter {
