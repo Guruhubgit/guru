@@ -1,43 +1,21 @@
-properties([
-  parameters([
-    [$class: 'ActiveChoicesReactiveParameter', 
-      choiceType: 'Check Boxes', 
-      description: 'Select Environment',
-      filterLength: 1,
-      filterable: false,
-      name: 'Environment', 
-      script: [
-        $class: 'GroovyScript', 
-        script: [
-          classpath: [], 
-          sandbox: false, 
-          script: 
-            'return[\'Development\',\'QA\',\'Staging\',\'Production\']'
-        ]
-      ]
-    ]
-  ])
-])
-
-pipeline {
-  environment {
-         vari = ""
-  }
-  agent any
-  stages {
-      stage ("Example") {
-        steps {
-         script{
-          echo 'Hello'
-          echo "${params.Env}"
-          echo "${params.Server}"
-          if (params.Server.equals("Could not get Environment from Env Param")) {
-              echo "Must be the first build after Pipeline deployment.  Aborting the build"
-              currentBuild.result = 'ABORTED'
-              return
-          }
-          echo "Crossed param validation"
-        } }
-      }
-  }
-}
+properties([parameters([[$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'Select the resource you want to modify', filterLength: 1, filterable: false, name: 'Resources', randomName: 'choice-parameter-843794284471400', referencedParameters: '',
+script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: ''],
+script: [classpath: [], sandbox: false,
+script: 'return ["Compute", "LIVE:selected"]']]],
+[$class: 'CascadeChoiceParameter', 
+ choiceType: 'PT_SINGLE_SELECT',
+ description: '', 
+ filterLength: 1, filterable: false,
+ name: 'choice1', 
+ randomName: 'choice-parameter-843794300545400',
+ referencedParameters: 'Resources',
+ script: [$class: 'GroovyScript',
+ fallbackScript: [classpath: [], sandbox: false, script: ''],
+ script: [classpath: [], sandbox: false, 
+ script: '''
+ if (Resources.equals("Compute")){
+                                return["aaaa","bbbb"]
+                                  }
+ else if(Resources.equals("LIVE")){
+                                return["cccc","dddd"]
+                            }''']]]])])
