@@ -13,13 +13,13 @@ properties([
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        'return [\'Could not get Env\']'
+                        return[\'Could not get Env\']
                 ], 
                 script: [
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        'return ["Dev", "QA", "Stage", "Prod"]'
+                        return["Dev", "QA", "Stage", "Prod"]
                 ]
             ]
         ], 
@@ -37,7 +37,7 @@ properties([
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        'return [\'Could not get Environment from Env Param\']'
+                        return[\'Could not get Environment from Env Param\']
                 ], 
                 script: [
                     classpath: [], 
