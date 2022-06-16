@@ -1,6 +1,6 @@
 properties([
     parameters([
-        [$class: 'ActiveChoiceParameter', 
+        [$class: 'ChoiceParameter', 
             choiceType: 'PT_CHECKBOX', 
             description: 'Select the Env Name from the Dropdown List', 
             filterLength: 1, 
