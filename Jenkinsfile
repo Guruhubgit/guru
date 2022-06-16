@@ -19,7 +19,7 @@ properties([
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        'return["BMSNADU", "BMSNADT", "BMSNADT1", "Prod"]'
+                        'return[\"BMSNADU\", \"BMSNADT\", \"BMSNADT1\", \"Prod\"]'
                 ]
             ]
         ] 
@@ -42,10 +42,6 @@ pipeline {
            for (x in arr) 
              {
                  echo "$x \n" 
-              if ($x == "BMSNADU") {
-              echo "Must be the first build after Pipeline deployment.  Aborting the build"
-              currentBuild.result = 'ABORTED'
-              return
           }
              }
          
