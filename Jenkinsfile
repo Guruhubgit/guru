@@ -19,7 +19,7 @@ properties([
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        'return[\"BMSNADU\", \"BMSNADT\", \"BMSNADT1\", \"Prod\"]'
+                        'return["BMSNADU", "BMSNADT", "BMSNADT1", "Prod"]'
                 ]
             ]
         ] 
