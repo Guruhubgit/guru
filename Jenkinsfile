@@ -1,6 +1,6 @@
 properties([
   parameters([
-    [$class: 'choiceparameter', 
+    [$class: 'ActiveChoicesReactiveParameter', 
       choiceType: 'Check Boxes', 
       description: 'Select Environment',
       filterLength: 1,
