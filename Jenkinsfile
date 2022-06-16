@@ -41,14 +41,8 @@ pipeline {
           String[] arr= "${params.Env}".split(','); 
              for (x in arr)
              { 
-             when 
-                 {
-             expression {
-                x == "BMSNADU" 
-             }
-             echo "$x \n" 
+             echo "$x" 
           }
-             }
          
           echo "Crossed param validation"
         } }
