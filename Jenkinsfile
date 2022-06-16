@@ -1,6 +1,6 @@
 properties([
   parameters([
-    [$class: 'CascadeChoiceParameter', 
+    [$class: 'choiceparameter', 
       choiceType: 'PT_CHECKBOX', 
       description: 'Select Environment',
       filterLength: 1,
