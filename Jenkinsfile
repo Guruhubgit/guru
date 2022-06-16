@@ -1,7 +1,7 @@
 properties([
   parameters([
     [$class: 'choiceparameter', 
-      choiceType: 'PT_CHECKBOX', 
+      choiceType: 'Chek Boxes', 
       description: 'Select Environment',
       filterLength: 1,
       filterable: false,
