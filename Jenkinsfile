@@ -38,7 +38,7 @@ pipeline {
          script{
           echo 'Hello'
           echo "${params.Env}"
-          if (params.env.equals("Dev")) {
+          if (params.Env.equals("Dev")) {
               echo "Must be the first build after Pipeline deployment.  Aborting the build"
               currentBuild.result = 'ABORTED'
               return
