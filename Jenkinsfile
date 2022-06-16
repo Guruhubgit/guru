@@ -39,9 +39,14 @@ pipeline {
           echo 'Hello'
           echo "${params.Env}"
           String[] arr= "${params.Env}".split(','); 
-           for (x in arr) 
-             {
-                 echo "$x \n" 
+             for (x in arr)
+             { 
+             when 
+                 {
+             expression {
+                x == "BMSNADU" 
+             }
+             echo "$x \n" 
           }
              }
          
