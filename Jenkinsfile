@@ -1,7 +1,7 @@
 properties([
     parameters([
         [$class: 'ChoiceParameter', 
-            choiceType: 'PT_SINGLE_SELECT', 
+            choiceType: 'PT_CHECKBOX', 
             description: 'Select the Env Name from the Dropdown List', 
             filterLength: 1, 
             filterable: true, 
@@ -24,7 +24,7 @@ properties([
             ]
         ], 
         [$class: 'CascadeChoiceParameter', 
-            choiceType: 'PT_SINGLE_SELECT', 
+            choiceType: 'PT_CHECKBOX', 
             description: 'Select the Server from the Dropdown List', 
             filterLength: 1, 
             filterable: true, 
