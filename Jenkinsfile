@@ -37,7 +37,7 @@ properties([
                     classpath: [], 
                     sandbox: false, 
                     script: 
-                        return[\'Could not get Environment from Env Param\']
+                        return['Could not get Environment from Env Param']
                 ], 
                 script: [
                     classpath: [], 
