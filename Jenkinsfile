@@ -38,11 +38,12 @@ pipeline {
          script{
           echo 'Hello'
           echo "${params.Env}"
-          if (params.Env.equals("Dev")) {
-              echo "Must be the first build after Pipeline deployment.  Aborting the build"
-              currentBuild.result = 'ABORTED'
-              return
-          }
+          String[] arr= "${params.Env}".split(','); 
+           for (x in arr) 
+             {
+                 echo "$x \n" 
+             }
+         
           echo "Crossed param validation"
         } }
       }
