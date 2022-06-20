@@ -8,14 +8,15 @@ def call(def giturl, def branch, def cred){
     
     repo_branch = sh (returnStdout: true, script:"""
         curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
-        echo "$repo_branch"
+        """)
+    
+    repo = sh (returnStdout: true, script:"""
+        for (branch in $repo_branch){
+        $repo_branch | cut -d'"' -f 2
+        }
         """)
     
     
     echo "$repo_branch"
     echo "$branch"
-    
-    for ($branch in $repo_branch) {
-        println "Master there"
-}
 }
