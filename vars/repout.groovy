@@ -24,7 +24,7 @@ for (repo in gitNameArray) {
         """)
     }
     else{
-     repo_branch2 = sh (returnStdout: true, script:"""
+     writer_date = sh (returnStdout: true, script:"""
         curl -s 'https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main' | jq '.commit.commit.author.date'
         """)
     }
