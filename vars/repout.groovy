@@ -18,10 +18,9 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
     
      last_updated_date = sh (returnStdout: true, script:""" 
-        if [ $repo_branch == $repo_branch ] ; then 
-        echo "its file"
-        else
-        echo "file or directory not found"
-        fi
+      for i in {$repo}
+      do
+      echo "do something right $i"
+      done
         """)
 }
