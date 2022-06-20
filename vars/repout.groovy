@@ -17,7 +17,7 @@ def call(def giturl, def branch, def cred){
         """)
    echo "$repo"  
     def branchArray = ["$repo"]
-    for (branch in branchArray) {
+    for(branch in branchArray) {
      println branch
 }
 }
