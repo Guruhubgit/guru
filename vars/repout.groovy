@@ -19,7 +19,13 @@ def call(def giturl, def branch, def cred){
 def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
     if(repo=="master") {
-    println repo
+        repo_branch = sh (returnStdout: true, script:"""
+        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/guru/branches/$repo | jq '.commit.commit.author.date'
+        """)
+    }
+    else{
+    echo "error"
+    }
 }
 }
 }
