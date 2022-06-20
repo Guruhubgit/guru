@@ -17,7 +17,7 @@ def call(def giturl, def branch, def cred){
         """)
    echo "$repo"  
 def gitNameArray = ["$repo"]
-for (car in gitNameArray) {
-    println car
+for (repo in gitNameArray) {
+    println repo
 }
 }
