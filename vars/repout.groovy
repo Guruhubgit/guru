@@ -25,7 +25,7 @@ for (repo in gitNameArray) {
     }
     else{
      repo_branch = sh (returnStdout: true, script:"""
-        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.commit.commit.author.date'
+        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.commit.commit.author.date'
         """)
     }
 }
