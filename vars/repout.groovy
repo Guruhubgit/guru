@@ -9,6 +9,6 @@ def call(def giturl, def branch, def cred){
     repo_branch = sh (script:"""
          list_of_branches = curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
          for branch in $list_of_branches; do 
-         branch_name=${(echo ${branch} | cut -d'"' -f 2)}     
+         branch_name = (echo ${branch} | cut -d'"' -f 2)     
         """)
 }
