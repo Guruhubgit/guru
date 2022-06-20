@@ -28,4 +28,3 @@ for (repo in gitNameArray) {
     }
 }
 }
-}
