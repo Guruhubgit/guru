@@ -18,6 +18,8 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
 def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
+    if(group=="master") {
     println repo
+}
 }
 }
