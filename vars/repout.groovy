@@ -7,7 +7,7 @@ def call(def giturl, def branch, def cred){
     echo "looking for branches"
     
     repo_branch = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
+        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches | jq '.[].name'
         """)
     echo "$repo_branch"
     
@@ -18,9 +18,9 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
 def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
-    if(repo=="master|dev") {
+    if(repo=="master") {
         repo_branch = sh (returnStdout: true, script:"""
-        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/guru/branches/$repo | jq '.commit.commit.author.date'
+        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.commit.commit.author.date'
         """)
     }
     else{
