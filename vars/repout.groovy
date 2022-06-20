@@ -18,8 +18,9 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
     
      last_updated_date = sh (returnStdout: true, script:""" 
-      for (item in $repo);
-      do
-      echo "do something right $item"
+     def carNameArray = ["BMW", "Mercedez Benz", "Volvo"]
+     for (car in carNameArray) {
+     println car
+}
       """)
 }
