@@ -18,7 +18,7 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
 def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
-    if(main == main) {
+    if(repo == main) {
         repo_branch = sh (returnStdout: true, script:"""
         curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.commit.commit.author.date'
         """)
