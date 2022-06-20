@@ -16,9 +16,8 @@ def call(def giturl, def branch, def cred){
         echo "$repo_branch"
         """)
    echo "$repo"  
-    def gitArray = ["$repo"];
-    for (branch in gitArray)
-    {
-     println branch
+def carNameArray = ["$repo"]
+for (car in carNameArray) {
+    println car
 }
 }
