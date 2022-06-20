@@ -16,8 +16,8 @@ def call(def giturl, def branch, def cred){
         echo "$repo_branch"
         """)
    echo "$repo"  
-    def carNameArray = ["$repo"]
-    for (game in carNameArray) {
-     println car
+    def branchArray = ["$repo"]
+    for (branch in brancArray) {
+     println branch
 }
 }
