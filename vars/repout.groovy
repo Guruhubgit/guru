@@ -29,4 +29,8 @@ for (repo in gitNameArray) {
         """)
     }
 }
+        repo2 = sh (returnStdout: true, script:"""
+        #!/bin/bash
+        echo "$repo_branch2"
+        """)
 }
