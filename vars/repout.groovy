@@ -13,9 +13,9 @@ def call(def giturl, def branch, def cred){
     
     repo = sh (returnStdout: true, script:"""
         echo "$repo_branch"
-        for (branch in $repo_branch)
+        for (i in $repo_branch)
         {
-        echo branch | cut -d'"' -f 2
+        echo i | cut -d'"' -f 2
         }
         """)
    echo "$repo"  
