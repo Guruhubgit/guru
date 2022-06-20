@@ -9,7 +9,7 @@ def call(def giturl, def branch, def cred){
     
     repo_branch = sh (returnStdout: true, script:"""
       cd /var/lib/jenkins/workspace/checout
-      list_of_branches = (curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name')
+      list_of_branches = curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
         """)
 
 }
