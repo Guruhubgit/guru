@@ -11,7 +11,8 @@ def call(def giturl, def branch, def cred){
         """)
     
     echo "$repo_branch"
+    echo "$branch"
     
-    for $branch in $repo_branch; do
+    for ($branch in $repo_branch); do
         echo "brach there"
 }
