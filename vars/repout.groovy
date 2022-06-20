@@ -18,5 +18,5 @@ def call(def giturl, def branch, def cred){
         echo branch | cut -d'"' -f 2
         }
         """)
-   
+   echo "$repo"  
 }
