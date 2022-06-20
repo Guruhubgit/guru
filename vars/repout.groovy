@@ -14,7 +14,7 @@ def call(def giturl, def branch, def cred){
     repo = sh (returnStdout: true, script:"""
         #!/bin/bash
         echo "$repo_branch"
-        for i in $list_of_branches; do
+        for i in $repo_branch; do
         echo i | cut -d'"' -f 2
         """)
    echo "$repo"  
