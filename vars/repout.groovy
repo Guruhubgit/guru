@@ -18,6 +18,7 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
     
      last_updated_date = sh (returnStdout: true, script:"""
+        echo "$repo"  
         for (branch in $repo); do
         echo "$branch"
         """)
