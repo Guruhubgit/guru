@@ -7,8 +7,8 @@ def call(def giturl, def branch, def cred){
 
     echo "looking for branches"
     
-    repo_branch = sh (returnStdout: true, script:"""
-     pwd
+    repo_branch = sh (script:"""
+         pwd
         """)
 
 }
