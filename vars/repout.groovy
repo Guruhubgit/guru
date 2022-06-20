@@ -11,7 +11,7 @@ def call(def giturl, def branch, def cred){
         """)
     echo "$repo_branch"
     
-    repo = bash (returnStdout: true, script:"""
+    repo = sh (returnStdout: true, script:"""
         #!/bin/bash
         echo "$repo_branch"
         for (i in $repo_branch)
