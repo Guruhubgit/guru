@@ -13,8 +13,7 @@ def call(def giturl, def branch, def cred){
     echo "$repo_branch"
     echo "$branch"
     
-    for ($branch in $repo_branch); 
-       {
+    for ($branch in $repo_branch) {
         println "Master there"
 }
 }
