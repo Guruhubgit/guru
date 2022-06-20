@@ -21,3 +21,4 @@ def call(def giturl, def branch, def cred){
         for branch in $repo; do 
         curl -s https://api.github.com/repos/Guruhubgit/guru/branches/$repo | jq '.commit.commit.author.date'
         """)
+}
