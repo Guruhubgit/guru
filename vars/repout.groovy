@@ -28,6 +28,7 @@ for (repo in gitNameArray) {
         curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo
         """)
         echo "$writer_date"
+        echo "$writer_date | jq '.commit.commit.author.date'"
     }
 }
 
