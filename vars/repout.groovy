@@ -19,7 +19,6 @@ def call(def giturl, def branch, def cred){
     
      last_updated_date = sh (returnStdout: true, script:"""
         for (branch in $repo); do
-        curl -s https://api.github.com/repos/Guruhubgit/guru/branches/$repo | jq '.commit.commit.author.date'
-        done
+        echo "$branch"
         """)
 }
