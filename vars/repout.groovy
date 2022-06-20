@@ -6,5 +6,5 @@ def call(def giturl, def branch, def cred){
      )
     echo "looking for branches"
    
-    repo_branch =  curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
+    repo_branch =  sh 'curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name''
 }
