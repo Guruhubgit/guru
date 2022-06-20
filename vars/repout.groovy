@@ -8,7 +8,9 @@ def call(def giturl, def branch, def cred){
     
     repo_branch = sh (returnStdout: true, script:"""
         curl -s https://api.github.com/repos/Guruhubgit/guru/branches | jq '.[].name'
+        echo "$repo_branch"
         """)
+    
     
     echo "$repo_branch"
     echo "$branch"
