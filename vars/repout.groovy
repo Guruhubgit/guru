@@ -28,6 +28,13 @@ for (repo in gitNameArray) {
         curl -s 'https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo' | jq '.commit.commit.author.date'
         """)
     }
-    echo "$repo_branch2"
 }
+    echo "$repo_branch2"
+     test = sh (returnStdout: true, script:"""
+        #!/bin/bash
+        echo "$repo_branch2"
+        """)
+    
+     echo "$test"  
+
 }
