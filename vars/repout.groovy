@@ -17,7 +17,7 @@ def call(def giturl, def branch, def cred){
         """)
    echo "$repo"  
 
-def gitNameArray = [$repo]
+def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
     if(repo == 'main') {
         test = sh (returnStdout: true, script:"""
