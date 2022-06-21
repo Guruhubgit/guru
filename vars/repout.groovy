@@ -24,6 +24,5 @@ def call(def giturl, def branch, def cred){
     }
     else{
     echo "go next"
-         }
-}     
+         }    
 }
