@@ -24,13 +24,18 @@ for (repo in gitNameArray) {
         """)
     }
     else{
-     writer_date = sh (returnStdout: true, script:"""
-          curl https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.[].commit.commit.author.date'
-        """)
+    echo "go next"
          }
-        outp= "$writer_date"
-        echo "$outp"
 }
+            outp= "$writer_date"
+      
+        writer_date = sh (returnStdout: true, script:"""
+        curl https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.[].commit.commit.author.date'
+        """)
+    
+      echo "$writer_date"
+}
+
 
 
 }
