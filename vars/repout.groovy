@@ -25,10 +25,10 @@ for (repo in gitNameArray) {
     }
     else{
      writer_date = sh (returnStdout: true, script:"""
-          curl https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo
+          curl https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq ".commit.commit.author.date"
         """)
          }
-        outp= "$writer_date" | jq '.commit.commit.author.date'
+        outp= "$writer_date"
         echo "$outp"
 }
 
