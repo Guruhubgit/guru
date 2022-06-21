@@ -21,7 +21,7 @@ def call(def giturl, def branch, def cred){
                     {
                         if(counter == "main") {
                    test = sh (returnStdout: true, script:"""
-                   curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main | jq '.commit.commit.author.date'
+                   curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/counter | jq '.commit.commit.author.date'
                    """)
              }
            else{
