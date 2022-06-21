@@ -1,4 +1,4 @@
-def call(def giturl, def branch, def cred){
+def call(def giturl, def branch, def cred, def repository){
     echo "Cloning started"
      checkout(
                 [$class: 'GitSCM', branches: [[name: "*/$branch"]],
@@ -7,7 +7,7 @@ def call(def giturl, def branch, def cred){
     echo "looking for branches"
     
     repo_branch = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches | jq '.[].name'
+        curl -s https://api.github.com/repos/Guruhubgit/$repository/branches | jq '.[].name'
         """)
     echo "$repo_branch"
     
@@ -21,8 +21,8 @@ def call(def giturl, def branch, def cred){
                     {
                         if(counter == "$branch") {
                    test = sh (returnStdout: true, script:"""
-                   curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$counter | jq '.commit.commit.author.date'
-                   curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$counter | jq '.commit.commit.author.name'
+                   curl -s https://api.github.com/repos/Guruhubgit/$repository/branches/$counter | jq '.commit.commit.author.date'
+                   curl -s https://api.github.com/repos/Guruhubgit/$repository/branches/$counter | jq '.commit.commit.author.name'
                    """)
              }
            else{
