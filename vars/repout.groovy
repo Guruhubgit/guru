@@ -28,4 +28,5 @@ def call(def giturl, def branch, def cred){
                  echo "go next"
          }
                     }   
+      echo "$test"
 }
