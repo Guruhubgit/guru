@@ -16,13 +16,10 @@ def call(def giturl, def branch, def cred){
         echo "$repo_branch"
         """)
    echo "$repo"  
-
-    if($repo == "main") {
-        test = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main | jq '.commit.commit.author.date'
-        """)
-    }
-    else{
-    echo "go next"
-         }    
+    
+    String[] array= "$rep".split(' ');
+                    for(counter in array)
+                    {
+                        echo "$counter"
+                    }   
 }
