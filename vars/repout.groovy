@@ -18,7 +18,7 @@ def call(def giturl, def branch, def cred){
    echo "$repo"  
     
             writ_date = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/{$repo} | jq '.commit.commit.author.date'
+        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/repo | jq '.commit.commit.author.date'
         """)
     
       echo "$writer_date"
@@ -26,7 +26,7 @@ def gitNameArray = ["$repo"]
 for (repo in gitNameArray) {
     if(repo == "main") {
         repo_branch = sh (returnStdout: true, script:"""
-        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$repo | jq '.commit.commit.author.date'
+        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/repo | jq '.commit.commit.author.date'
         """)
     }
     else{
