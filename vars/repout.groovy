@@ -28,6 +28,4 @@ for (repo in gitNameArray) {
     echo "go next"
          }
 }     
-    echo "$test"
-
 }
