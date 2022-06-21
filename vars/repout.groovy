@@ -19,7 +19,7 @@ def call(def giturl, def branch, def cred){
         String[] array= "$repo_branch".split('"');
                     for(counter in array)
                     {
-                        if(counter == "main") {
+                        if(counter == "$branch") {
                    test = sh (returnStdout: true, script:"""
                    curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/$counter | jq '.commit.commit.author.date'
                    """)
