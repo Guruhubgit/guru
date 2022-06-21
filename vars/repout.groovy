@@ -21,7 +21,7 @@ def gitNameArray = ["master", "main"]
 for (repo in gitNameArray) {
     if(repo == 'main') {
         test = sh (returnStdout: true, script:"""
-        curl -s -u $user_name:$password https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main | jq '.commit.commit.author.date'
+        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main | jq '.commit.commit.author.date'
         """)
     }
     else{
