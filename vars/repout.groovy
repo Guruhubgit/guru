@@ -11,11 +11,6 @@ def call(def giturl, def branch, def cred, def repository){
         """)
     echo "$repo_branch"
     
-    repo = sh (returnStdout: true, script:"""
-        #!/bin/bash
-        echo "$repo_branch"
-        """)
-   echo "$repo"  
         String[] array= "$repo_branch".split('"');
                     for(counter in array)
                     {
@@ -29,5 +24,5 @@ def call(def giturl, def branch, def cred, def repository){
                  echo "go next"
          }
                     }   
-      echo "$test"
+      echo "last commit on $branch is on $test"
 }
