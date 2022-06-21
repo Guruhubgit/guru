@@ -17,7 +17,7 @@ def call(def giturl, def branch, def cred){
         """)
    echo "$repo"  
     
-    String[] array= "$rep".split(' ');
+    String[] array= "$repo".split(' ');
                     for(counter in array)
                     {
                         echo "$counter"
