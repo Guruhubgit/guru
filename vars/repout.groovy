@@ -28,7 +28,7 @@ for (repo in gitNameArray) {
          }
 }     
         writer_date = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches | jq '.[].name'
+        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches | jq '.commit.commit.author.date'
         """)
     
       echo "$writer_date"
