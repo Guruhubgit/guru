@@ -35,7 +35,3 @@ for (repo in gitNameArray) {
     
       echo "$writer_date"
 }
-
-
-
-}
