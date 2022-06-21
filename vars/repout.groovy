@@ -20,13 +20,5 @@ def call(def giturl, def branch, def cred){
                     for(counter in array)
                     {
                        echo "$counter"
-                       if($counter == "main") {
-        test = sh (returnStdout: true, script:"""
-        curl -s https://api.github.com/repos/Guruhubgit/liauibasedemo/branches/main | jq '.commit.commit.author.date'
-        """)
-             }
-           else{
-                 echo "go next"
-         } 
                     }   
 }
